@@ -1,5 +1,9 @@
 import Link from "next/link";
 import { db } from "@/db";
+import {revalidatePath} from 'next/cache'
+
+//Make page dynamic
+// export const dynamic = 'force-dynamic'
 
 export default async function HomePage() {
 	const snippets = await db.snippet.findMany();
